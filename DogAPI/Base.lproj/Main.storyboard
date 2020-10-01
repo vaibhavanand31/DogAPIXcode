@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ojg-ik-aii">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Dog List View-->
+        <scene sceneID="NPg-lW-c5T">
+            <objects>
+                <viewController id="yBR-DG-SFQ" customClass="DogListViewController" customModule="DogAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="muT-d5-Drm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sHf-8I-ql0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HiX-OO-K5T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HiX-OO-K5T" firstAttribute="bottom" secondItem="sHf-8I-ql0" secondAttribute="bottom" id="aTx-LV-ZSi"/>
+                            <constraint firstItem="sHf-8I-ql0" firstAttribute="top" secondItem="HiX-OO-K5T" secondAttribute="top" id="cUn-Lt-EqX"/>
+                            <constraint firstItem="sHf-8I-ql0" firstAttribute="leading" secondItem="HiX-OO-K5T" secondAttribute="leading" id="f17-et-SSk"/>
+                            <constraint firstItem="HiX-OO-K5T" firstAttribute="trailing" secondItem="sHf-8I-ql0" secondAttribute="trailing" id="moL-LC-1c4"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Dog List View" id="NRc-81-xxc"/>
+                    <connections>
+                        <outlet property="dogBreadTableView" destination="sHf-8I-ql0" id="0Uz-pd-Q4L"/>
+                        <segue destination="nT8-Ho-9kz" kind="show" identifier="detailImageView" id="sPm-v6-jNN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2zh-cv-4is" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="784.05797101449286" y="-949.55357142857133"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="hPs-RX-k5b">
+            <objects>
+                <viewController id="nT8-Ho-9kz" customClass="DetailImageViewController" customModule="DogAPI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kZv-zQ-Mcg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l4X-Be-N8v">
+                                <rect key="frame" x="8" y="96" width="398" height="758"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="l4X-Be-N8v" secondAttribute="height" multiplier="199:379" id="gaX-z6-TY9"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xbz-Nb-OB7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Xbz-Nb-OB7" firstAttribute="trailing" secondItem="l4X-Be-N8v" secondAttribute="trailing" constant="8" id="Pid-Kw-rh2"/>
+                            <constraint firstItem="l4X-Be-N8v" firstAttribute="leading" secondItem="Xbz-Nb-OB7" secondAttribute="leading" constant="8" id="UST-Iu-Jle"/>
+                            <constraint firstItem="Xbz-Nb-OB7" firstAttribute="bottom" secondItem="l4X-Be-N8v" secondAttribute="bottom" constant="8" id="ZFK-h5-034"/>
+                            <constraint firstItem="l4X-Be-N8v" firstAttribute="top" secondItem="Xbz-Nb-OB7" secondAttribute="top" constant="8" id="qZR-Vs-Y45"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image" id="ddi-m5-Lkj"/>
+                    <connections>
+                        <outlet property="dogImageView" destination="l4X-Be-N8v" id="u18-qg-w56"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lby-Ak-rDX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1685.5072463768117" y="-951.5625"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Kwz-nL-tmF">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ojg-ik-aii" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pMG-5r-vLr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yBR-DG-SFQ" kind="relationship" relationship="rootViewController" id="nN8-Ub-3XG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ymM-yj-e5X" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-126.08695652173914" y="-949.55357142857133"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
